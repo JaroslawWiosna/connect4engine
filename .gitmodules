@@ -1,0 +1,3 @@
+[submodule "connect4tests"]
+	path = connect4tests
+	url = git://github.com/JaroslawWiosna/connect4tests.git
