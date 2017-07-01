@@ -13,6 +13,7 @@ class ValidatorGrid{
 	std::string mBoard;
 	bool hasBothPlayersWon();
 	bool onePlayerPutTwoStonesOrMoreMore();
+	bool stoneIsHanging();
 };
 
 #endif // VALIDATORGRID_HPP

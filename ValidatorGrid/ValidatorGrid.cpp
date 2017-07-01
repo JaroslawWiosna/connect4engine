@@ -31,3 +31,9 @@ bool ValidatorGrid::onePlayerPutTwoStonesOrMoreMore()
 	return false;
 }
 
+bool ValidatorGrid::stoneIsHanging()
+{
+	// TODO: implement
+	return false;
+}
+
