@@ -214,7 +214,6 @@ unsigned int Grid::columnLevel(unsigned int colNumber)
 			return (i+1);
 		}
 	}
-	
-	throw;
+	return 0;	
 }
 
