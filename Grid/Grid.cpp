@@ -51,6 +51,27 @@ bool Grid::hasSecondWon()
 	return checkSequence('2',4);
 }
 
+bool Grid::hasPlayerWon(unsigned int player)
+{
+	if (player == 1) {
+		return hasFirstWon();
+	} else if (player == 2) {
+		return hasSecondWon();
+	} else {
+		throw;
+	}
+}
+bool Grid::hasPlayerWon(char player)
+{
+	if (player == '1') {
+		return hasFirstWon();
+	} else if (player == '2') {
+		return hasSecondWon();
+	} else {
+		throw;
+	}
+}
+
 bool Grid::checkSequence(char player, std::size_t howMany)
 {
 	return (checkRows(player, howMany) 
@@ -215,5 +236,20 @@ unsigned int Grid::columnLevel(unsigned int colNumber)
 		}
 	}
 	return 0;	
+}
+
+unsigned int Grid::findNextWinningMove(char player)
+{
+	std::vector<Grid> combinations;
+	combinations.reserve(7);
+
+	for (int i=0 ; i<7 ; ++i) {
+		combinations.emplace_back(mBoard,player,i+1);
+		if (combinations.back().hasPlayerWon(player)) {
+			return (i+1);
+		}
+	}
+
+	return 0;
 }
 

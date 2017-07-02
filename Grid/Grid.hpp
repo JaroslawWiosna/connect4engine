@@ -14,8 +14,11 @@ class Grid{
 	Grid(std::string board, char player, unsigned int column);
 	bool hasFirstWon();
 	bool hasSecondWon();
+	bool hasPlayerWon(unsigned int);
+	bool hasPlayerWon(char);
 	std::string getBoard();
 	unsigned int columnLevel(unsigned int);
+	unsigned int findNextWinningMove(char);
 	
 	void print();
 
